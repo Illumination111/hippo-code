@@ -169,15 +169,12 @@ class HiPPOBioCacheAdapter:
             **kwargs,
         )
 
-    @property
     def persistent_state(self) -> HiPPOPersistentState:
         return self._persistent_state
 
-    @property
     def static_extra_state(self) -> Any:
         return self._static_extra_state
 
-    @property
     def temporary_state(self) -> Any:
         return self._temporary_state
 
@@ -291,6 +288,9 @@ def dry_run() -> dict[str, Any]:
     adapter.reset()
     adapter.update(temporary_state={"phase": "write"})
     adapter.query({"phase": "recall"}, temporary_state={"phase": "read"})
+    adapter.persistent_state()
+    adapter.static_extra_state()
+    adapter.temporary_state()
     delayed = {
         "schema_version": SCHEMA_VERSION,
         "record_type": "delayed_recall",

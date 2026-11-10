@@ -16,10 +16,10 @@ an observation, `update` may delegate to the wrapped cell's existing
 `forward`; `query` only returns an injected query result, the cached cell
 output, or `h`.
 
-The common API is `reset`, `update`, `query`, `persistent_state`,
-`static_extra_state`, and `temporary_state`. Recursive byte accounting, timing,
-byte/time budgets, manifest schema, and delayed-recall/VNBench-feature JSONL
-schemas are included.
+The common callable API is `reset()`, `update()`, `query()`,
+`persistent_state()`, `static_extra_state()`, and `temporary_state()`.
+Recursive byte accounting, timing, byte/time budgets, manifest schema, and
+delayed-recall/VNBench-feature JSONL schemas are included.
 
 No-model validation:
 
